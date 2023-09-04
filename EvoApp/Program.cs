@@ -2,6 +2,8 @@ using EvoApp.Services;
 using EvoApp.Services.Articles;
 using EvoApp.Services.Contract;
 using EvoApp.Services.Details;
+using EvoApp.Services.MyArticleList;
+using EvoApp.Services.MyView;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using MySql.Data.MySqlClient;
@@ -25,6 +27,8 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddScoped<IArticlesServiceRest, ArticlesServiceRest>();
 builder.Services.AddScoped<IContractServiceRest, ContractServiceRest>();
 builder.Services.AddScoped<IDetailsServiceRest, DetailsServiceRest>();
+builder.Services.AddScoped<IMyViewServiceRest, MyViewServiceRest>();
+builder.Services.AddScoped<IMyArticleListServiceRest, MyArticleListServiceRest>();
 
 builder.Services.AddCors(options => {
     options.AddPolicy("Default", builder => {
